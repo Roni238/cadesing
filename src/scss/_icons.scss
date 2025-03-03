@@ -1,0 +1,24 @@
+@use '@/scss/_mixins' as *;
+
+.logo-icon {
+  width: 115px;
+  height: 25px;
+}
+.vk-icon {
+  width: 21px;
+  height: 12px;
+}
+.ok-icon {
+  width: 11px;
+  height: 18px;
+}
+.facebook-icon {
+  width: 9px;
+  height: 17px;
+}
+.inst-icon {
+  width: 16px;
+  height: 18px;
+  @include desktop {
+  }
+}

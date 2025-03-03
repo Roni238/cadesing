@@ -1,0 +1,48 @@
+@use '@/scss/_variables' as *;
+@use '@/scss/_mixins' as *;
+
+@font-face {
+  font-family: 'Helios';
+  src: url('@/assets/fonts/helios.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('@/assets/fonts/Gilroy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$main-font: 'Helios', sans-serif;
+$gilroy-font: 'Gilroy', sans-serif;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: $main-font;
+  text-decoration: none;
+}
+body {
+  margin: 0px;
+}
+
+// Текст
+h1 {
+  color: #fff;
+  font-size: 22px;
+  line-height: 25px;
+  @include tablet {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  @include desktop {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+p {
+  font-size: 13px;
+  line-height: 22px;
+}
