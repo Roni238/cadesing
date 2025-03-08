@@ -71,24 +71,22 @@ function toggleSocial() {
 .header {
   border-bottom: #f2f2f2 solid 1px;
   height: 72px;
-
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background: $white-color;
   @include tablet {
     height: 98px;
   }
 
   &__content {
-    max-width: 1260px;
     margin: auto;
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 0px 20px;
+    width: $mobile-content;
     height: 100%;
-    max-width: 1220px;
-
-    @include tablet {
-      padding: 0px 40px;
-    }
+    max-width: $desktop-content;
+    @include padding;
   }
 
   &__logo {
@@ -122,7 +120,6 @@ function toggleSocial() {
   position: relative;
 
   &__btn {
-    border: none;
     background: none;
     font-size: 14px;
     line-height: 16px;
@@ -132,6 +129,7 @@ function toggleSocial() {
     align-items: center;
     gap: 5px;
     position: relative;
+    font-family: $gilroy-font;
   }
 
   &__btn-icon {
@@ -146,15 +144,13 @@ function toggleSocial() {
     z-index: 5;
     display: grid;
     grid-template-columns: repeat(2, 68px);
-    background: #fff;
+    background: $white-color;
     box-shadow: 0px 17px 46px 0px rgba(0, 0, 0, 0.08);
   }
   &__link {
     height: 50px;
     border: 1px solid $border-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center;
     fill: $orange-color;
 
     &:hover {

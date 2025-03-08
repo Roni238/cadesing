@@ -124,10 +124,8 @@ const socials = [
     width: 48px;
     height: 35px;
     border: 1px solid $border-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     fill: $orange-color;
+    @include center;
     @include tablet {
       height: 50px;
       width: 68px;

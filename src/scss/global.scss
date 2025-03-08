@@ -14,9 +14,6 @@
   font-style: normal;
 }
 
-$main-font: 'Helios', sans-serif;
-$gilroy-font: 'Gilroy', sans-serif;
-
 * {
   margin: 0px;
   padding: 0px;
@@ -27,7 +24,9 @@ $gilroy-font: 'Gilroy', sans-serif;
 body {
   margin: 0px;
 }
-
+button {
+  border: none;
+}
 // Текст
 h1 {
   color: #fff;

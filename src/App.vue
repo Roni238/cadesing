@@ -3,6 +3,7 @@ import AppHeader from '@/components/layouts/header/AppHeader.vue'
 import AppFooter from '@/components/layouts/header/AppFooter.vue'
 import BannerSection from '@/components/pageComponents/mainPage/BannerSection.vue'
 import AdvantagesSection from '@/components/pageComponents/mainPage/AdvantagesSection.vue'
+import TeamSection from './components/pageComponents/mainPage/TeamSection.vue'
 </script>
 
 <template>
@@ -10,24 +11,28 @@ import AdvantagesSection from '@/components/pageComponents/mainPage/AdvantagesSe
 
   <main class="main">
     <BannerSection class="main__banner" />
-    <!-- <AdvantagesSection class="main__advantages" /> -->
+    <AdvantagesSection class="main__advantages" />
+    <TeamSection class="main__team" />
   </main>
   <AppFooter />
 </template>
 
 <style lang="scss">
 .main {
+  &__banner,
+  &__advantages,
+  &__team {
+    margin-bottom: 36px;
+    @include tablet {
+      margin-bottom: 64px;
+    }
+    @include desktop {
+      margin-bottom: 72px;
+    }
+  }
   &__banner {
     @include desktop {
       margin-top: 36px;
-    }
-  }
-
-  &__people {
-    background-color: #e0e0e0;
-    margin: 0px 20px;
-    @include tablet {
-      margin: 0px;
     }
   }
 }
