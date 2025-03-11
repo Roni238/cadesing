@@ -1,35 +1,22 @@
-# .
+# cadesing тестовое
 
-This template should help get you started developing with Vue 3 in Vite.
+## Предпросмотр https://cadesing.vercel.app/
 
-## Recommended IDE Setup
+## Начало работы
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```
+$ npm install
+$ npm run dev
 ```
 
-### Compile and Hot-Reload for Development
+Тестовое задание для cadesing стек: Vue 3, Vite, SCSS, Git, БЭМ-методология.
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+* Оснавные блоки сделаны в app.vue (vue-router не использовал)
+* В папке scss переменные, миксины, глобальные стили и классы для иконок
+* Иконки загружаются спрайт листом через один компонент BaseIcon (все свг разгого размера по этому у сделал отдельный _icons.scss с классами размеров иконок, там же можно менять цвет маштабировать миксинами и другое)
+* Верстка по БЭМ методологии
+* Сделан универсальный компонент попапов
+* В Baseinput htfkbpjdfy универсальный функционал для валидации полей
+* Использованы миксины для медиазапросов и повторяющихся стилей.
+* При заполненой форме отклика data для запроса выводится в консоль, поля чистятся
+* Ошибки из полей эмитятся в форму для проверки перед отправкой, текст ошибок можно потом выводить гдето если нужно будет
