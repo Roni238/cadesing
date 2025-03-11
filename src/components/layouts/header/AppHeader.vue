@@ -73,7 +73,7 @@ function toggleSocial() {
   height: 72px;
   position: sticky;
   top: 0px;
-  z-index: 100;
+  z-index: 90;
   background: $white-color;
   @include tablet {
     height: 98px;
@@ -141,7 +141,6 @@ function toggleSocial() {
     top: 30px;
     padding: 19px;
     position: absolute;
-    z-index: 5;
     display: grid;
     grid-template-columns: repeat(2, 68px);
     background: $white-color;

@@ -4,7 +4,11 @@
       <p class="liaison__title">Отдел подбора персонала:</p>
       <p class="liaison__number">8 800 700 8000</p>
       <a class="liaison__email" href="mailto:oco_rabota@mail.ru">oco_rabota@mail.ru</a>
-      <button class="liaison__cta-btn">Cтать частью команды</button>
+
+      <button @click="openJobPositingPopup" class="liaison__cta-btn">Cтать частью команды</button>
+      <BasePopup v-if="isPopupVisible" @close="closeJobPositingPopup">
+        <JobPositingPopup />
+      </BasePopup>
 
       <div class="liaison__socials">
         <a
@@ -30,7 +34,18 @@
 </template>
 <script setup>
 import BaseIcon from '@/components/ui/BaseIcon.vue'
+import BasePopup from '@/components/ui/BasePopup.vue'
+import JobPositingPopup from '@/components/popups/JobPositingPopup.vue'
+import { ref } from 'vue'
 
+const isPopupVisible = ref(false)
+const openJobPositingPopup = () => {
+  isPopupVisible.value = true
+}
+
+const closeJobPositingPopup = () => {
+  isPopupVisible.value = false
+}
 const socials = [
   {
     link: 'https://vk.com/cadesignru',

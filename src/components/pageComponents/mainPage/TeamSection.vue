@@ -120,6 +120,7 @@ onMounted(() => {
       text-align: center;
       @include desktop {
         text-align: start;
+        max-width: 630px;
       }
     }
     &__name {
