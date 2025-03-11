@@ -110,16 +110,6 @@ import BaseInput from '../ui/BaseInput.vue'
 import BaseTextarea from '../ui/BaseTextarea.vue'
 import BaseFileInput from '../ui/BaseFileInput.vue'
 
-const errors = ref({
-  vacancy: null,
-  name: null,
-  phoneNumber: null,
-  email: null,
-  education: null,
-  address: null,
-  birthdate: null,
-})
-
 const formData = reactive({
   vacancy: '',
   name: '',
@@ -131,6 +121,16 @@ const formData = reactive({
   file: null,
   comment: '',
   acceptAgreement: false,
+})
+
+const errors = ref({
+  vacancy: null,
+  name: null,
+  phoneNumber: null,
+  email: null,
+  education: null,
+  address: null,
+  birthdate: null,
 })
 
 const setError = (field, error) => {
@@ -151,9 +151,21 @@ const hasErrors = computed(() => {
   }
 })
 
+const clearFormData = () => {
+  Object.keys(formData).forEach((key) => {
+    formData[key] = ''
+  })
+  formData.phoneNumber = '+7'
+  formData.file = null
+  formData.acceptAgreement = false
+  Object.keys(errors.value).forEach((key) => {
+    errors.value[key] = null
+  })
+}
 const sendResume = () => {
   if (hasErrors) {
     console.log(formData)
+    clearFormData()
   }
 }
 </script>
