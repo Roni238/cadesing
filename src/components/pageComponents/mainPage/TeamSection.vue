@@ -5,7 +5,11 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="people in peoples" :key="people.img">
             <div class="swiper-slide__image-container">
-              <img class="swiper-slide__img" :src="`/src/assets/images/${people.image}`" alt="" />
+              <img
+                class="swiper-slide__img"
+                :src="`/assets/images/${people.image}`"
+                alt="people.image"
+              />
             </div>
 
             <div class="swiper-slide__text">
@@ -23,7 +27,7 @@
   </section>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import Swiper from 'swiper'
 import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
