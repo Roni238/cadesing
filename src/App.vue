@@ -1,6 +1,6 @@
 <script setup>
-import AppHeader from '@/components/layouts/header/AppHeader.vue'
-import AppFooter from '@/components/layouts/header/AppFooter.vue'
+import AppHeader from '@/components/layouts/AppHeader.vue'
+import AppFooter from '@/components/layouts/AppFooter.vue'
 import BannerSection from '@/components/pageComponents/mainPage/BannerSection.vue'
 import AdvantagesSection from '@/components/pageComponents/mainPage/AdvantagesSection.vue'
 import TeamSection from './components/pageComponents/mainPage/TeamSection.vue'

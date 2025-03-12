@@ -73,31 +73,44 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+$desktop-breakpoint: 1480px;
+
 .team {
   &__content {
     margin: auto;
     position: relative;
     padding: 0px 20px;
+
     @include tablet {
       padding: 0px;
-      max-width: $tablet-content;
+      margin: 0px 40px;
     }
     @include desktop {
+      margin: 0px auto;
+    }
+    @include desktop($desktop-breakpoint) {
       height: 446px;
-      max-width: 1480px;
+      max-width: $desktop-breakpoint;
       background-color: $gray-color;
     }
   }
 
   &__container {
     overflow: hidden;
-    @include container;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    @include tablet {
+    }
+    @include desktop($desktop-breakpoint) {
+      max-width: $desktop-content;
+    }
   }
 }
 
 .swiper {
   &-slide {
-    @include desktop {
+    @include desktop($desktop-breakpoint) {
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
@@ -110,8 +123,9 @@ onMounted(() => {
       @include tablet {
         height: 404px;
       }
-      @include desktop {
+      @include desktop($desktop-breakpoint) {
         height: 100%;
+        margin-bottom: 0px;
       }
     }
     &__img {
@@ -122,7 +136,7 @@ onMounted(() => {
     }
     &__text {
       text-align: center;
-      @include desktop {
+      @include desktop($desktop-breakpoint) {
         text-align: start;
         max-width: 630px;
       }
@@ -135,7 +149,7 @@ onMounted(() => {
         font-size: 28px;
         margin-bottom: 20px;
       }
-      @include desktop {
+      @include desktop($desktop-breakpoint) {
         font-size: 36px;
       }
     }
@@ -147,7 +161,7 @@ onMounted(() => {
         font-size: 16px;
         margin-bottom: 35px;
       }
-      @include desktop {
+      @include desktop($desktop-breakpoint) {
         margin-bottom: 40px;
       }
     }
@@ -175,7 +189,7 @@ onMounted(() => {
         top: 201px;
         margin: 0px 30px;
       }
-      @include desktop {
+      @include desktop($desktop-breakpoint) {
         top: 50%;
       }
 

@@ -1,7 +1,7 @@
 <template>
   <teleport to="body">
-    <div class="popup">
-      <div class="popup__content">
+    <div class="popup" @click="closePopup">
+      <div class="popup__content" @click.stop>
         <button class="popup__close-btn" @click="closePopup">✕</button>
         <slot />
       </div>
@@ -12,18 +12,19 @@
 <script setup>
 import { onMounted, onUnmounted, defineEmits } from 'vue'
 
-onMounted(() => (document.documentElement.style.overflow = 'hidden'))
-
-onUnmounted(() => (document.documentElement.style.overflow = 'auto'))
+onMounted(() => document.documentElement.classList.add('html--no-scroll'))
+onUnmounted(() => document.documentElement.classList.remove('html--no-scroll'))
 
 const emit = defineEmits(['close'])
 const closePopup = () => {
   emit('close')
-  document.documentElement.style.overflow = 'auto'
+  document.documentElement.classList.remove('html--no-scroll')
 }
 </script>
 
 <style lang="scss" scoped>
+$desktop-breakpoint: 1330px;
+
 .popup {
   position: fixed;
   inset: 0;
@@ -45,7 +46,8 @@ const closePopup = () => {
     height: auto !important;
     overflow: visible;
     position: relative;
-    @include container;
+    max-width: $desktop-content;
+    margin: auto;
     @include tablet {
       padding: 128px 40px 77px;
     }
@@ -68,7 +70,7 @@ const closePopup = () => {
       height: 64px;
       width: 64px;
     }
-    @include desktop {
+    @include desktop($desktop-breakpoint) {
       right: -70px;
       top: 0px;
       height: 70px;

@@ -190,11 +190,14 @@ const sendResume = () => {
   }
   &__title {
     margin-bottom: 38px;
+    font-size: 18px;
     @include tablet {
       margin-bottom: 53px;
+      font-size: 32px;
     }
     @include desktop {
       margin-bottom: 57px;
+      font-size: 36px;
     }
   }
 

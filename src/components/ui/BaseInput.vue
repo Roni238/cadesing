@@ -15,7 +15,7 @@
     <label class="base-input__label-placeholder">
       {{ label }}
     </label>
-    <label class="base-input__label-icon" @click="clearInput">
+    <label v-if="modelValue" class="base-input__label-icon" @click="clearInput">
       {{ hasError ? '✕' : '✔' }}
     </label>
     <p class="base-input__error" v-if="hasError">{{ errorText }}</p>

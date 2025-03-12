@@ -1,13 +1,13 @@
 @use '@/scss/_variables' as *;
 
-@mixin tablet {
-  @media (min-width: 768px) {
+@mixin tablet($breakpoint: 768px) {
+  @media (min-width: $breakpoint) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: $desktop-content) {
+@mixin desktop($breakpoint: $desktop-content) {
+  @media (min-width: $breakpoint) {
     @content;
   }
 }
@@ -41,16 +41,16 @@
     }
   }
 }
-@mixin container {
+@mixin container($mb: $mobile-content, $tb: $tablet-content, $st: $desktop-content) {
   margin: auto;
-  width: 100%;
+  width: $mb;
   height: 100%;
 
   @include tablet {
-    max-width: 688px;
+    max-width: $tb;
   }
   @include desktop {
-    max-width: $desktop-content;
+    max-width: $st;
   }
 }
 
