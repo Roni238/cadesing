@@ -20,15 +20,19 @@
         @update:error="setError('name', $event)"
       />
 
-      <BaseInput
+      <BasePhoneInput
+        class="job-posting__phone"
+        v-model="formData.phoneNumber"
+        @update:error="setError('phoneNumber', $event)"
+      />
+      <!-- <BaseInput
         class="job-posting__phone"
         :label="'Мобильный телефон*'"
         :errorText="'Неверный формат номера'"
         :placeholder="'+ 7-903-123-45-67'"
         :type="'tel'"
-        v-model="formData.phoneNumber"
-        @update:error="setError('phoneNumber', $event)"
-      />
+
+      /> -->
 
       <BaseInput
         class="job-posting__email"
@@ -109,6 +113,7 @@ import { ref, reactive, computed } from 'vue'
 import BaseInput from '../ui/BaseInput.vue'
 import BaseTextarea from '../ui/BaseTextarea.vue'
 import BaseFileInput from '../ui/BaseFileInput.vue'
+import BasePhoneInput from '../ui/BasePhoneInput.vue'
 
 const formData = reactive({
   vacancy: '',
@@ -143,7 +148,8 @@ const hasErrors = computed(() => {
     formData.vacancy &&
     formData.name &&
     formData.education &&
-    formData.address
+    formData.address &&
+    formData.phoneNumber.length > 3
   ) {
     return Object.values(errors.value).some((error) => error !== null)
   } else {
@@ -172,11 +178,6 @@ const sendResume = () => {
 
 <style lang="scss" scoped>
 .job-posting {
-  &__phone {
-    :deep(.base-input__label-placeholder) {
-      top: 13px;
-    }
-  }
   &__birthdate {
     :deep(.base-input__label-placeholder) {
       top: 13px;

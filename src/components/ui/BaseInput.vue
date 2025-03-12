@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, defineProps } from 'vue'
 
 const props = defineProps({
   label: { type: String, required: true },
@@ -37,7 +37,6 @@ const props = defineProps({
 const validationPatterns = {
   text: /^[A-Za-zА-Яа-я0-9.,\s]*$/,
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-  tel: /^[0-9\s\+\-]*$/,
   date: /^\d{4}-\d{2}-\d{2}$/,
 }
 
