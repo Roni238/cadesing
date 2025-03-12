@@ -23,20 +23,29 @@
               rel="noopener noreferrer"
               class="social__link"
             >
-              <BaseIcon :icon="social.icon" :width="social.w" :height="social.h" />
+              <BaseIcon :icon="social.icon" />
             </a>
           </div>
         </div>
       </nav>
 
-      <BaseIcon class="header__sidebar" :icon="'sidebar'" />
+      <BaseIcon class="header__sidebar" :icon="'sidebar'" @click="isSidebarVisible = true" />
+
+      <AppSidebar
+        v-if="isSidebarVisible"
+        :links="links"
+        :socials="socials"
+        @closeSidebar="isSidebarVisible = false"
+      />
     </div>
   </header>
 </template>
 <script setup>
 import BaseIcon from '@/components/ui/BaseIcon.vue'
+import AppSidebar from '@/components/layouts/AppSidebar.vue'
 import { ref } from 'vue'
 
+const isSidebarVisible = ref(false)
 const isShowSocial = ref(false)
 const links = [
   { title: 'О нас', href: '/' },

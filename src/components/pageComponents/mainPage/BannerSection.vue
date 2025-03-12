@@ -10,8 +10,8 @@
           Энергия твоего роста! – <br />
           заряжаем твою карьеру
         </h1>
-        <button @click="openJobPositingPopup" class="banner__cta-btn">Cтать частью команды</button>
-        <BasePopup v-if="isPopupVisible" @close="closeJobPositingPopup">
+        <button @click="isPopupVisible = true" class="banner__cta-btn">Cтать частью команды</button>
+        <BasePopup v-if="isPopupVisible" @close="isPopupVisible = false">
           <JobPositingPopup />
         </BasePopup>
       </div>
@@ -24,13 +24,6 @@ import JobPositingPopup from '@/components/popups/JobPositingPopup.vue'
 import { ref } from 'vue'
 
 const isPopupVisible = ref(false)
-const openJobPositingPopup = () => {
-  isPopupVisible.value = true
-}
-
-const closeJobPositingPopup = () => {
-  isPopupVisible.value = false
-}
 </script>
 <style lang="scss" scoped>
 .banner {

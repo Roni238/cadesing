@@ -5,8 +5,8 @@
       <p class="liaison__number">8 800 700 8000</p>
       <a class="liaison__email" href="mailto:oco_rabota@mail.ru">oco_rabota@mail.ru</a>
 
-      <button @click="openJobPositingPopup" class="liaison__cta-btn">Cтать частью команды</button>
-      <BasePopup v-if="isPopupVisible" @close="closeJobPositingPopup">
+      <button @click="isPopupVisible = true" class="liaison__cta-btn">Cтать частью команды</button>
+      <BasePopup v-if="isPopupVisible" @close="isPopupVisible = false">
         <JobPositingPopup />
       </BasePopup>
 
@@ -39,13 +39,6 @@ import JobPositingPopup from '@/components/popups/JobPositingPopup.vue'
 import { ref } from 'vue'
 
 const isPopupVisible = ref(false)
-const openJobPositingPopup = () => {
-  isPopupVisible.value = true
-}
-
-const closeJobPositingPopup = () => {
-  isPopupVisible.value = false
-}
 const socials = [
   {
     link: 'https://vk.com/cadesignru',

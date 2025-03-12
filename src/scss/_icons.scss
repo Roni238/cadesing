@@ -1,22 +1,40 @@
+@use '@/scss/_mixins' as *;
+
 .logo-icon {
   width: 115px;
   height: 25px;
 }
 .vk-icon {
-  width: 21px;
-  height: 12px;
+  width: 14px;
+  height: 7px;
+  @include tablet {
+    width: 21px;
+    height: 12px;
+  }
 }
 .ok-icon {
-  width: 11px;
-  height: 18px;
+  width: 7px;
+  height: 12px;
+  @include tablet {
+    width: 11px;
+    height: 18px;
+  }
 }
 .facebook-icon {
-  width: 9px;
-  height: 17px;
+  width: 6px;
+  height: 11px;
+  @include tablet {
+    width: 9px;
+    height: 17px;
+  }
 }
 .inst-icon {
-  width: 16px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
+  @include tablet {
+    width: 16px;
+    height: 18px;
+  }
 }
 .progress-icon {
   width: 66px;
