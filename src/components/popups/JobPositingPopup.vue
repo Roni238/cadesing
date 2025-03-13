@@ -109,7 +109,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, toRaw } from 'vue'
 import BaseInput from '../ui/BaseInput.vue'
 import BaseTextarea from '../ui/BaseTextarea.vue'
 import BaseFileInput from '../ui/BaseFileInput.vue'
@@ -170,7 +170,7 @@ const clearFormData = () => {
 }
 const sendResume = () => {
   if (hasErrors) {
-    console.log(formData)
+    console.log(toRaw(formData))
     clearFormData()
   }
 }

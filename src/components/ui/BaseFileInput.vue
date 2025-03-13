@@ -51,7 +51,6 @@ const clearFile = () => {
   }
 }
 
-// Следим за изменением selectedFile и эмитим обновление
 watch(selectedFile, (newFile) => {
   emit('update:modelValue', newFile)
 })

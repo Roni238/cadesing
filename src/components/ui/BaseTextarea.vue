@@ -16,17 +16,14 @@
 <script setup>
 import { ref, watch } from 'vue'
 
-// Принимаем modelValue через props для двусторонней привязки данных с родителем
 const props = defineProps({
   modelValue: { type: String, default: '' },
   placeholder: { type: String, default: 'Введите текст' },
   label: { type: String, default: 'Комментарий' },
 })
 
-// Создаем локальную переменную для привязки
 const textareaValue = ref(props.modelValue)
 
-// Отслеживаем изменения в textareaValue и передаем их родителю
 const emit = defineEmits(['update:modelValue'])
 
 const isFocused = ref(false)
